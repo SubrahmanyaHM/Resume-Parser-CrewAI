@@ -191,11 +191,11 @@ def main() -> None:
     crew = build_crew()
     result = crew.kickoff(
         inputs={
-            "resume_text": read_text(resume_path),
-            "job_description": read_text(jd_path),
+            "resume_text": read_text(args.resume),
+            "job_description": read_text(args.jd),
         }
     )
 
-    report_path = save_output(output_dir, result)
+    report_path = save_output(args.output_dir, result)
     print(f"Report saved to: {report_path.resolve()}")
 
